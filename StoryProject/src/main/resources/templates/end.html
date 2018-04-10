@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>End Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
+</head>
+<body>
+<h1>Mad Lib Story</h1>
+<p>Page 3</p>
+<p>Pick a number to add to the story:</p>
+<p>Even though we saw that <form action="/story"  th:object="${story}" method="post" >
+<input th:field="*{years}" placeholder="Number of years" />years ago, we still laugh to this day
+
+<button >Next Page</button>
+</form>
+
+</body>
+</html>

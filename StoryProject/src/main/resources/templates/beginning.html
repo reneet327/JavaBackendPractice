@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<title>Home Page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
+	</head>
+	<body>
+		<h1>Mad Lib Story</h1>
+		<h3>Page 1</h3>
+		<p>Pick a name to add to the story:</p>
+		
+		<p>
+			I was watching TV with 
+			<form action="/middle"  th:object="${story}" method="post" >
+				<input th:field="*{name}" placeholder="A person's name" />
+			, when suddenly...
+				<button >Next Page</button>
+			</form>
+		</p>
+		
+	</body>
+</html>

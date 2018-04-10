@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Finished Story</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
+</head>
+<body>
+<h1>Mad Lib Story</h1>
+<h3>Final Story</h3>
+<p>I was watching TV with <span th:text="${story.name}"></span>, when suddenly...
+a breaking news alert showed a <span th:text="${story.animal}"></span> running on the freeway.
+Even though we saw that <span th:text="${story.years}"></span> years ago, we still laugh to this day.
+</p>
+</body>
+</html>

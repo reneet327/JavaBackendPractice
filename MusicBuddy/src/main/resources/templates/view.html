@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Music Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  </head>
+  <body>
+  <h1>Music Database</h1>
+  <p>These are all the albums and their artists</p>
+  <table>
+    <tr>
+      <th>Album Title</th>
+      <th>Artist Name</th>
+    </tr>
+    <tr th:each="list: ${lists}">
+	  <td th:text="${list.name}"></td>
+	  <td th:text="${list.title}"></td>      
+    </tr>
+  </table>
+
+  </body>
+</html>

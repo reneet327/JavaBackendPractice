@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Middle Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
+</head>
+<body>
+<h1>Mad Lib Story</h1>
+<h3>Page 2</h3>
+<p>Pick an animal to add to the story:</p>
+<p>a breaking news alert showed a <form action="/end"  th:object="${story}" method="post" >
+<input th:field="*{animal}" placeholder="Animal" />running on the freeway.
+
+<button >Next Page</button>
+</form>
+
+</body>
+</html>
