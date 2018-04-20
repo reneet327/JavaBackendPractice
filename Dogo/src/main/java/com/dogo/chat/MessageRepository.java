@@ -1,5 +1,7 @@
 package com.dogo.chat;
 
-public interface MessageRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MessageRepository extends JpaRepository<Message, Integer> {
 
 }
