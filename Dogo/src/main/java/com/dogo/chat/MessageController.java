@@ -10,21 +10,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api")
 public class MessageController {
 
     @Autowired
     MessageRepository dao;
     
-    @GetMapping("/chat")
+    @GetMapping("/api/chat")
     public List<Message> getMessages(){
         List<Message> foundMessages = dao.findAll();
         return foundMessages;
     }
     
-    @GetMapping("/chat/{id}")
+    @GetMapping("/api/chat/{id}")
     public ResponseEntity<Message> getMessage(@PathVariable(value="id") Integer id){
         Message foundMessage = dao.getOne(id);
 
@@ -33,7 +35,7 @@ public class MessageController {
         }
         return ResponseEntity.ok(foundMessage);
     }
-    @PostMapping("/chat")
+    @PostMapping("/api/chat")
     public ResponseEntity<Message> postMessage(@RequestBody Message message){
 
         // Saving to DB using an instance of the repo Interface.
@@ -43,7 +45,7 @@ public class MessageController {
         return ResponseEntity.ok(createdMessage);
     }
     
-    @PutMapping("/chat/{id}")
+    @PutMapping("/api/chat/{id}")
     public ResponseEntity<Message> putMessage(@PathVariable(value="id") Integer id, @RequestBody Message message ){
         Message foundMessage = dao.getOne(id); 
         
@@ -63,7 +65,7 @@ public class MessageController {
         return ResponseEntity.ok(updatedMessage);
     }
     
-    @DeleteMapping("/chat/{id}")
+    @DeleteMapping("/api/chat/{id}")
     public ResponseEntity<Message> deleteMessage(@PathVariable(value="id") Integer id){
         Message foundMessage = dao.getOne(id);
 
@@ -75,5 +77,14 @@ public class MessageController {
         return ResponseEntity.ok().build();
     }
     
+    @GetMapping("math/add/{x}/{y}")
+    public int getMath(@PathVariable("x") int x,@PathVariable("y") int y ) {
+        return x + y;
+    }
+    
+    @GetMapping("hello/{x}")
+    public String getName(@PathVariable("x") String x) {
+        return x;
+    }
 
 }
