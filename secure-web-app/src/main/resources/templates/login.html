@@ -4,27 +4,34 @@
     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
 <title>Spring Security Example</title>
-<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <nav>
+    <div>
+        <a th:href="@{/}">Home</a>
+    </div>
+    <div>
+        <a th:href="@{/securesauce}">Secure Sauce</a>
+    </div>
+    <div>
+        <a th:href="@{/login}"><b>Login</b></a>
+    </div>
+
+    <h1>Login:</h1>
+
+    <div th:if="${param.error}">Invalid username and password.</div>
+    <div th:if="${param.logout}">You have been logged out.</div>
+    <form th:action="@{/login}" method="post">
         <div>
-            <a th:href="@{/}"><b>Home</b></a>
+            <label> User Name : <input type="text" name="username" />
+            </label>
         </div>
         <div>
-            <a th:href="@{/securesauce}">Secure Sauce</a>
+            <label> Password: <input type="password" name="password" />
+            </label>
         </div>
         <div>
-            <a th:href="@{/login}">Login</a>
+            <input type="submit" value="Sign In" />
         </div>
-    </nav>
-    <h1>Welcome!</h1>
-    <p>This page has a couple pieces to bring to your attention.</p>
-    <ul>
-    <li>Right click and open your dev tools.</li>
-    <li>Select Elements and then inspect the href links on this page.</li>
-    <li>click on console and check the error.</li>
-    <li>Refer back to the curriculum for explanation.</li>
-    </ul>
+    </form>
 </body>
 </html>

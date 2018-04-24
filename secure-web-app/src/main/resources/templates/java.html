@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Spring Security Example</title>
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <nav>
+        <div>
+            <a th:href="@{/}"><b>Home</b></a>
+        </div>
+        <div>
+            <a th:href="@{/securesauce}">Secure Sauce</a>
+        </div>
+        <div>
+            <a th:href="@{/login}">Login</a>
+        </div>
+    </nav>
+    <h1>Java Fun!</h1>
+    <button onclick="myFunction()">Click Me!</button>
+    <script th:src="@{/js/script.js}" ></script>
+</body>
+</html>
